@@ -31,7 +31,7 @@ function Header() {
               Services
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-200 group-hover:w-full"></span>
             </Link>
-            <Link to="/#projects" className="text-gray-700 hover:text-primary-500 font-medium transition-colors duration-200 relative group">
+            <Link to="/projects" className="text-gray-700 hover:text-primary-500 font-medium transition-colors duration-200 relative group">
               Projects
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-200 group-hover:w-full"></span>
             </Link>
