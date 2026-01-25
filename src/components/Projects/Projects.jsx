@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Palette, Monitor, ClipboardList, ExternalLink, Calendar } from 'lucide-react'
+import kaiCoverImage from '../../assets/img/kai_redesign/sampul_redesign_kai.png'
 
 function Projects() {
   const [activeCategory, setActiveCategory] = useState('all')
@@ -26,12 +28,13 @@ function Projects() {
     {
       id: 2,
       title: 'KAI Redesign Apps',
-      category: 'development',
+      category: 'uiux',
       period: 'October 2025',
-      description: 'Platform web pemesanan tiket kereta api KAI dengan integrasi AI chatbot berbasis voice command untuk aksesibilitas dan pengalaman pengguna yang lebih baik.',
+      description: 'Case study ini mengeksplorasi solusi untuk masalah aksesibilitas informasi harga tiket kereta api. Masalahnya bukan di harga, tapi di kemudahan akses informasi. Solusi desain ini bukan soal menambah fitur, tapi menempatkan keputusan di waktu yang tepat - dengan menjadikan kalender sebagai alat eksplorasi yang memungkinkan user menentukan preferensi harga dan kelas langsung di halaman kalender melalui filter kontekstual.',
       technologies: ['Laravel 12', 'React 18', 'Inertia.js', 'Tailwind CSS 4', 'Ollama AI', 'Voice Recognition API', 'MySQL'],
       link: 'https://github.com',
       image: 'bg-gradient-to-br from-primary-500 to-secondary-300',
+      coverImage: kaiCoverImage,
       achievement: 'Top 15 Hacksphere Hackathon'
     },
     {
@@ -105,6 +108,17 @@ function Projects() {
       link: '#',
       image: 'bg-gradient-to-br from-primary-500 to-secondary-300',
       organization: 'Cah Solo Telkom Community'
+    },
+    {
+      id: 10,
+      title: 'Implementasi Manajemen Proyek menggunakan Trello',
+      category: 'management',
+      period: 'September 2024 - Januari 2025',
+      description: 'Menggunakan dummy Porject Charter dari sebuah Projek Sistem Manajemen Pembangunan Desa di Grobogan, yang menggunakan metode Agile dengan tampilan Kanban untuk monitoring',
+      technologies: ['Event Management', 'Leadership', 'Coordination'],
+      link: '#',
+      image: 'bg-gradient-to-br from-primary-500 to-secondary-300',
+      organization: 'Proyek Tugas Akhir Mata Kuliah Project Management'
     }
   ]
 
@@ -168,21 +182,31 @@ function Projects() {
                 className="card p-6 hover:shadow-xl transition-all duration-300 group"
               >
                 {/* Project Image/Icon */}
-                <div className={`w-full h-48 ${project.image} rounded-xl mb-4 flex items-center justify-center relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-400/20 to-secondary-300/20"></div>
+                <div className={`w-full h-48 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden ${!project.coverImage ? project.image : ''}`}>
+                  {project.coverImage ? (
+                    <img 
+                      src={project.coverImage} 
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary-400/20 to-secondary-300/20"></div>
+                      {project.category === 'uiux' && (
+                        <Palette className="text-white w-16 h-16 opacity-50" />
+                      )}
+                      {project.category === 'development' && (
+                        <Monitor className="text-white w-16 h-16 opacity-50" />
+                      )}
+                      {project.category === 'management' && (
+                        <ClipboardList className="text-white w-16 h-16 opacity-50" />
+                      )}
+                    </>
+                  )}
                   {project.achievement && (
                     <div className="absolute top-2 right-2 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary-600">
                       {project.achievement}
                     </div>
-                  )}
-                  {project.category === 'uiux' && (
-                    <Palette className="text-white w-16 h-16 opacity-50" />
-                  )}
-                  {project.category === 'development' && (
-                    <Monitor className="text-white w-16 h-16 opacity-50" />
-                  )}
-                  {project.category === 'management' && (
-                    <ClipboardList className="text-white w-16 h-16 opacity-50" />
                   )}
                 </div>
 
@@ -228,7 +252,15 @@ function Projects() {
                   </div>
 
                   {/* View Project Link */}
-                  {project.link && (
+                  {project.id === 2 ? (
+                    <Link
+                      to="/projects/kai-redesign"
+                      className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm group/link"
+                    >
+                      <span>View Case Study</span>
+                      <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                    </Link>
+                  ) : project.link ? (
                     <a
                       href={project.link}
                       target="_blank"
@@ -238,7 +270,7 @@ function Projects() {
                       <span>View Project</span>
                       <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                     </a>
-                  )}
+                  ) : null}
                 </div>
               </div>
             ))}
@@ -249,33 +281,6 @@ function Projects() {
           </div>
         )}
 
-        {/* Stats Summary */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="text-center p-6 bg-gray-50 rounded-xl">
-            <div className="text-3xl font-bold text-primary-500 mb-2">
-              {allProjects.filter(p => p.category === 'uiux').length}
-            </div>
-            <div className="text-sm text-gray-600">UI/UX Projects</div>
-          </div>
-          <div className="text-center p-6 bg-gray-50 rounded-xl">
-            <div className="text-3xl font-bold text-primary-500 mb-2">
-              {allProjects.filter(p => p.category === 'development').length}
-            </div>
-            <div className="text-sm text-gray-600">Development Projects</div>
-          </div>
-          <div className="text-center p-6 bg-gray-50 rounded-xl">
-            <div className="text-3xl font-bold text-primary-500 mb-2">
-              {allProjects.filter(p => p.category === 'management').length}
-            </div>
-            <div className="text-sm text-gray-600">Management Projects</div>
-          </div>
-          <div className="text-center p-6 bg-gray-50 rounded-xl">
-            <div className="text-3xl font-bold text-primary-500 mb-2">
-              {allProjects.length}
-            </div>
-            <div className="text-sm text-gray-600">Total Projects</div>
-          </div>
-        </div>
       </div>
     </div>
   )
