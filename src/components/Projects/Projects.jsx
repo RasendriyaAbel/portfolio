@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Palette, Monitor, ClipboardList, ExternalLink, Calendar } from 'lucide-react'
 import kaiCoverImage from '../../assets/img/kai_redesign/sampul_redesign_kai.png'
+import trelloCoverImage from '../../assets/img/manpro_trello/sampul_trello.png'
 
 function Projects() {
   const [activeCategory, setActiveCategory] = useState('all')
@@ -96,6 +97,7 @@ function Projects() {
       technologies: ['Web Development', 'Planning System', 'Automation'],
       link: '#',
       image: 'bg-gradient-to-br from-primary-500 to-secondary-300',
+      coverImage: trelloCoverImage,
       company: 'PT Berlindo Mitra Utama'
     },
     {
@@ -118,6 +120,7 @@ function Projects() {
       technologies: ['Event Management', 'Leadership', 'Coordination'],
       link: '#',
       image: 'bg-gradient-to-br from-primary-500 to-secondary-300',
+      coverImage: trelloCoverImage,
       organization: 'Proyek Tugas Akhir Mata Kuliah Project Management'
     }
   ]
