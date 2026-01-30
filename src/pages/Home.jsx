@@ -18,7 +18,7 @@ function Home() {
             <div className="space-y-6">
               <div className="space-y-4">
                 <p className="text-secondary-500 font-semibold text-sm tracking-widest uppercase">
-                  About Us
+                  About Me
                 </p>
                 <h2 className="text-4xl font-bold text-gray-800 leading-tight">
                   Are you looking for creative design? Let me help you!
@@ -71,7 +71,7 @@ function Home() {
                 <img
                   src={vectorImg}
                   alt="Experience Vector"
-                  className="w-[420px] h-[420px] md:w-[500px] md:h-[500px] object-contain"
+                  className="w-[620px] h-[620px] md:w-[600px] md:h-[600px] object-contain"
                   loading="eager"
                 />
                 

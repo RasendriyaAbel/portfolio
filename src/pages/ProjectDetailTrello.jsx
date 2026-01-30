@@ -6,6 +6,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import Footer from '../components/Footer/Footer'
+import ProjectHero from '../components/ProjectHero/ProjectHero'
 import trelloCover from '../assets/img/manpro_trello/sampul_trello.png'
 import trelloInfographic from '../assets/img/manpro_trello/infografis_manpro.png'
 import projectCharterDoc from '../assets/img/manpro_trello/project_charter.pdf'
@@ -37,43 +38,17 @@ function ProjectDetailTrello() {
   const documentationSlides = [trelloInfographic, mt1, mt2, mt3, mt4, mt5, mt6, mt7, mt8, mt9, mt10, mt11, mt12, mt13, mt14, mt15, mt16, mt17, mt18, mt19, mt20]
 
   return (
-    <div className="min-h-screen bg-white pt-24">
+    <div className="min-h-screen bg-white">
+      <ProjectHero
+        title="Implementasi Manajemen Proyek menggunakan Trello"
+        subtitle="Agile & Kanban untuk manajemen dan monitoring proyek"
+        coverSrc={trelloCover}
+        backPath="/projects"
+        backLabel="Kembali ke Projects"
+        repoUrl="#"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Back Button */}
-        <Link 
-          to="/projects" 
-          className="inline-flex items-center gap-2 text-gray-600 hover:text-primary-600 mb-8 transition-colors"
-        >
-          <ArrowLeft className="w-5 h-5" />
-          <span>Back to Projects</span>
-        </Link>
-
-        {/* Project Header */}
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
-              Project Management
-            </span>
-            <span className="px-4 py-1 bg-secondary-100 text-secondary-700 rounded-full text-sm font-semibold">
-              September 2024 - Januari 2025
-            </span>
-          </div>
-          <h1 className="text-5xl font-black text-gray-800 mb-4">
-            Implementasi Manajemen Proyek menggunakan Trello
-          </h1>
-          <p className="text-xl text-gray-600 mb-6 max-w-3xl">
-            Mengembangkan dan mengatur Projek Sistem Manajemen Pembangunan Desa di Grobogan, dengan metode Agile dan visualisasi Kanban untuk monitoring. Fokus pada praktik perencanaan sprint, manajemen backlog, dan tracking progres menggunakan Trello.
-          </p>
-          <div className="flex items-center gap-6">
-            <a 
-              href="#" 
-              className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold"
-            >
-              <ExternalLink className="w-4 h-4" />
-              View Repository
-            </a>
-          </div>
-        </div>
+        {/* Header lama digantikan oleh ProjectHero untuk konsistensi layout */}
 
 
         {/* Technologies Used */}

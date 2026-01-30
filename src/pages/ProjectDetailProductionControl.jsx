@@ -6,6 +6,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import Footer from '../components/Footer/Footer'
+import ProjectHero from '../components/ProjectHero/ProjectHero'
 import coverImage from '../assets/img/bmu/image.png'
 import ticketingImage from '../assets/img/bmu/ticketing.png'
 import pcs1 from '../assets/img/bmu/1.png'
@@ -29,57 +30,21 @@ function ProjectDetailProductionControl() {
   const documentationSlides = [coverImage, ticketingImage]
 
   return (
-    <div className="min-h-screen bg-white pt-24">
+    <div className="min-h-screen bg-white">
+      <ProjectHero
+        title="Production Control System"
+        subtitle="Web-based planning control untuk penjadwalan produksi harian"
+        coverSrc={coverImage}
+        backPath="/projects"
+        backLabel="Kembali ke Projects"
+        repoUrl="#"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Back Button */}
-        <Link 
-          to="/projects" 
-          className="inline-flex items-center gap-2 text-gray-600 hover:text-primary-600 mb-8 transition-colors"
-        >
-          <ArrowLeft className="w-5 h-5" />
-          <span>Back to Projects</span>
-        </Link>
+        {/* Header lama digantikan oleh ProjectHero untuk konsistensi layout */}
 
-        {/* Project Header */}
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
-              Project Management
-            </span>
-            <span className="px-4 py-1 bg-secondary-100 text-secondary-700 rounded-full text-sm font-semibold">
-              PT Berlindo Mitra Utama
-            </span>
-          </div>
-          <h1 className="text-5xl font-black text-gray-800 mb-4">Production Control System</h1>
-          <p className="text-xl text-gray-600 mb-6 max-w-3xl">
-            Web-based Planning Control System yang mengotomasi daily manufacturing production scheduling berdasarkan input parameters seperti production time, stock levels, customer demand, dan working hours.
-          </p>
-          <div className="flex items-center gap-4">
-            <span className="text-sm text-gray-500">Jul 2025 - Aug 2025</span>
-            <span className="text-gray-300">•</span>
-            <a 
-              href="#" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold"
-            >
-              <ExternalLink className="w-4 h-4" />
-              View Repository
-            </a>
-          </div>
-        </div>
+        {/* Project header lama dihapus, digantikan oleh ProjectHero */}
 
-        {/* Project Cover */}
-        <section className="mb-12">
-          <div className="card p-0 overflow-hidden">
-            <img 
-              src={coverImage} 
-              alt="Production Control System Cover"
-              className="w-full h-auto object-cover rounded-2xl"
-              loading="eager"
-            />
-          </div>
-        </section>
+        {/* Project cover lama dihapus, digantikan oleh ProjectHero */}
 
         {/* Product Overview */}
         <section className="mb-16">

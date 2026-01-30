@@ -5,6 +5,9 @@ import kaiCoverImage from '../../assets/img/kai_redesign/sampul_redesign_kai.png
 import trelloCoverImage from '../../assets/img/manpro_trello/sampul_trello.png'
 import fixyouCoverImage from '../../assets/img/fixyou/cover_fixyou.png'
 import bmuCoverImage from '../../assets/img/bmu/image.png'
+import coverMusikan from '../../assets/img/musikan/cover_musikan.png'
+import coverHarvestHub from '../../assets/img/harvesthub/cover_harvesthub.png'
+import coverTAK from '../../assets/img/imk/cover_tak.png'
 
 function Projects() {
   const [activeCategory, setActiveCategory] = useState('all')
@@ -49,7 +52,8 @@ function Projects() {
       description: 'Platform untuk meningkatkan efektivitas distribusi makanan, pertanian, dan pertanian. Hackfest Participant dengan Digital Mind Studio.',
       technologies: ['Figma', 'React.js', 'Java', 'Firebase'],
       link: 'https://github.com',
-      image: 'bg-gradient-to-br from-primary-500 to-secondary-300'
+      image: 'bg-gradient-to-br from-primary-500 to-secondary-300',
+      coverImage: coverHarvestHub
     },
     {
       id: 4,
@@ -59,7 +63,8 @@ function Projects() {
       description: 'Mobile app prototype untuk Student Activity Transcript (TAK) Telkom University untuk meningkatkan aksesibilitas dan user experience khususnya untuk mahasiswa.',
       technologies: ['Figma', 'CorelDraw X7'],
       link: 'https://github.com',
-      image: 'bg-gradient-to-br from-primary-500 to-secondary-300'
+      image: 'bg-gradient-to-br from-primary-500 to-secondary-300',
+      coverImage: coverTAK
     },
     {
       id: 5,
@@ -69,8 +74,9 @@ function Projects() {
       description: 'UI/UX Research dan prototype untuk aplikasi music player. Melakukan user research, developing user personas, user flows, prototyping, wireframing, dan usability testing.',
       technologies: ['Figma', 'FigmaJam', 'Google Forms', 'System Usability Scale (SUS)'],
       link: 'https://github.com',
-      image: 'bg-gradient-to-br from-primary-500 to-secondary-300'
-    },
+      image: 'bg-gradient-to-br from-primary-500 to-secondary-300',
+      coverImage: coverMusikan,
+},
     {
       id: 6,
       title: 'SyariPay E-Commerce Prototype',
@@ -266,6 +272,30 @@ function Projects() {
                   {project.id === 1 ? (
                     <Link
                       to="/projects/fixyou"
+                      className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm group/link"
+                    >
+                      <span>View Project</span>
+                      <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                    </Link>
+                  ) : project.id === 3 ? (
+                    <Link
+                      to="/projects/harvesthub"
+                      className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm group/link"
+                    >
+                      <span>View Project</span>
+                      <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                    </Link>
+                  ) : project.id === 4 ? (
+                    <Link
+                      to="/projects/tak-mobile-prototype"
+                      className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm group/link"
+                    >
+                      <span>View Project</span>
+                      <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                    </Link>
+                  ) : project.id === 5 ? (
+                    <Link
+                      to="/projects/musikan"
                       className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm group/link"
                     >
                       <span>View Project</span>

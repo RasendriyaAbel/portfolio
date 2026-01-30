@@ -6,6 +6,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import Footer from '../components/Footer/Footer'
+import ProjectHero from '../components/ProjectHero/ProjectHero'
 import fixYouImage1 from '../assets/img/fixyou/Purple Black Modern Marketing Plan Presentation_page-0001.jpg'
 import fixYouImage2 from '../assets/img/fixyou/Purple Black Modern Marketing Plan Presentation_page-0002.jpg'
 import fixYouImage3 from '../assets/img/fixyou/Purple Black Modern Marketing Plan Presentation_page-0003.jpg'
@@ -54,59 +55,17 @@ function ProjectDetailFixYou() {
       
    
   return (
-      <div className="min-h-screen bg-white pt-24">
+      <div className="min-h-screen bg-white">
+        <ProjectHero
+          title="FixYou - Mental Health Platform"
+          subtitle="Platform kesehatan mental dengan integrasi AI/ML untuk analisis mood"
+          coverSrc={fixyouCover}
+          backPath="/projects"
+          backLabel="Kembali ke Projects"
+          repoUrl="https://github.com"
+        />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {/* Back Button */}
-          <Link 
-            to="/projects" 
-            className="inline-flex items-center gap-2 text-gray-600 hover:text-primary-600 mb-8 transition-colors"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            <span>Back to Projects</span>
-          </Link>
-  
-          {/* Project Header */}
-          <div className="mb-12">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
-                Website Development
-              </span>
-              <span className="px-4 py-1 bg-secondary-100 text-secondary-700 rounded-full text-sm font-semibold">
-              Top 5 Finalist Intelecta Cup
-              </span>
-            </div>
-            <h1 className="text-5xl font-black text-gray-800 mb-4">
-            FixYou - Mental Health Platform
-            </h1>
-            <p className="text-xl text-gray-600 mb-6 max-w-3xl">
-            Platform web kesehatan mental dan konseling online dengan integrasi AI/ML untuk analisis mood dan chatbot konseling. Full Stack Developer yang mengembangkan platform dengan Laravel 12, React 19, dan integrasi Google Gemini API.
-            </p>
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-500">October 2025</span>
-              <span className="text-gray-300">•</span>
-              <a 
-                href="https://github.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold"
-              >
-                <ExternalLink className="w-4 h-4" />
-                View Repository
-              </a>
-            </div>
-          </div>
-
-          {/* Project Cover */}
-          <section className="mb-12">
-            <div className="card p-0 overflow-hidden">
-              <img 
-                src={fixyouCover} 
-                alt="FixYou Project Cover"
-                className="w-full h-auto object-cover rounded-2xl"
-                loading="eager"
-              />
-            </div>
-          </section>
+          {/* Header diganti oleh ProjectHero di atas */}
           {/* Case Study Slides - 3 per slide */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-800 mb-8">Product Overview</h2>

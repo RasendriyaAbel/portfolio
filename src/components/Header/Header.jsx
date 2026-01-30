@@ -1,23 +1,21 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Palette, Download } from 'lucide-react'
+import { Download, Menu, X } from 'lucide-react'
+import logoImg from '../../assets/img/header/logo.png'
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
-    <header className="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+    <header className="fixed w-full top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-300 rounded-lg flex items-center justify-center">
-              <Palette className="text-white w-5 h-5" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-gray-800 font-bold text-sm tracking-wide">PORTFOLIO</span>
-              <span className="text-secondary-500 font-semibold text-xs">DESIGNER</span>
-            </div>
+          <Link to="/" className="flex items-center">
+            <img src={logoImg} alt="Logo" className="w-20 h-20 sm:w-16 sm:h-16 rounded-lg" />
           </Link>
 
-          {/* Navigation Links */}
+          {/* Navigation Links - Desktop */}
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-700 hover:text-primary-500 font-medium transition-colors duration-200 relative group">
               Home
@@ -39,15 +37,57 @@ function Header() {
               Contact
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-200 group-hover:w-full"></span>
             </Link>
+
+            {/* Download CV Button - Desktop */}
+            <button className="btn-primary ml-2">
+              <Download className="w-4 h-4" />
+              <span>Download CV</span>
+            </button>
           </div>
 
-          {/* Download CV Button */}
-          <button className="btn-primary">
-            <Download className="w-4 h-4" />
-            <span>Download CV</span>
+          {/* Hamburger - Mobile */}
+          <button
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
+            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-100"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu Fullscreen (solid background) */}
+      <nav
+        className={`md:hidden fixed inset-0 z-40 bg-white transition-transform duration-300 ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}
+        aria-hidden={!isOpen}
+      >
+        <div className="px-6 py-4 flex items-center justify-between border-b border-gray-100">
+          <Link to="/" className="flex items-center" onClick={() => setIsOpen(false)}>
+            <img src={logoImg} alt="Logo" className="w-12 h-12 rounded-lg" />
+          </Link>
+          <button
+            aria-label="Close menu"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200"
+            onClick={() => setIsOpen(false)}
+          >
+            <X className="w-6 h-6" />
+          </button>
+        </div>
+        <div className="p-6 space-y-4">
+          <Link to="/" className="block text-gray-800 font-semibold hover:text-primary-600" onClick={() => setIsOpen(false)}>Home</Link>
+          <Link to="/about" className="block text-gray-800 font-semibold hover:text-primary-600" onClick={() => setIsOpen(false)}>About</Link>
+          <Link to="/#services" className="block text-gray-800 font-semibold hover:text-primary-600" onClick={() => setIsOpen(false)}>Services</Link>
+          <Link to="/projects" className="block text-gray-800 font-semibold hover:text-primary-600" onClick={() => setIsOpen(false)}>Projects</Link>
+          <Link to="/#contact" className="block text-gray-800 font-semibold hover:text-primary-600" onClick={() => setIsOpen(false)}>Contact</Link>
+          <div className="pt-4">
+            <button className="btn-primary w-full" onClick={() => setIsOpen(false)}>
+              <Download className="w-4 h-4" />
+              <span>Download CV</span>
+            </button>
+          </div>
+        </div>
+      </nav>
     </header>
   )
 }

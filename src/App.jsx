@@ -7,6 +7,9 @@ import ProjectDetail from './pages/ProjectDetail'
 import ProjectDetailTrello from './pages/ProjectDetailTrello'
 import ProjectDetailFixYou from './pages/ProjectDetailFixYou'
 import ProjectDetailProductionControl from './pages/ProjectDetailProductionControl'
+import ProjectDetailMusikan from './pages/ProjectDetailMusikan'
+import ProjectDetailHarvestHub from './pages/ProjectDetailHarvestHub'
+import ProjectDetailTAK from './pages/ProjectDetailTAK'
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
           <Route path="/projects/trello-management" element={<ProjectDetailTrello />} />
           <Route path="/projects/fixyou" element={<ProjectDetailFixYou />} />
           <Route path="/projects/production-control-system" element={<ProjectDetailProductionControl />} />
+          <Route path="/projects/musikan" element={<ProjectDetailMusikan />} />
+          <Route path="/projects/harvesthub" element={<ProjectDetailHarvestHub />} />
+          <Route path="/projects/tak-mobile-prototype" element={<ProjectDetailTAK />} />
         </Routes>
       </div>
     </Router>
