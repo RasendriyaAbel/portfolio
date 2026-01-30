@@ -26,6 +26,7 @@ import fixYouImage17 from '../assets/img/fixyou/Purple Black Modern Marketing Pl
 import fixYouImage18 from '../assets/img/fixyou/Purple Black Modern Marketing Plan Presentation_page-0018.jpg'
 import fixYouImage19 from '../assets/img/fixyou/Purple Black Modern Marketing Plan Presentation_page-0019.jpg'
 import fixYouImage20 from '../assets/img/fixyou/Purple Black Modern Marketing Plan Presentation_page-0020.jpg'
+import fixyouCover from '../assets/img/fixyou/cover_fixyou.png'
 
 function ProjectDetailFixYou() {
       const caseStudySlides = [
@@ -94,7 +95,18 @@ function ProjectDetailFixYou() {
               </a>
             </div>
           </div>
-  
+
+          {/* Project Cover */}
+          <section className="mb-12">
+            <div className="card p-0 overflow-hidden">
+              <img 
+                src={fixyouCover} 
+                alt="FixYou Project Cover"
+                className="w-full h-auto object-cover rounded-2xl"
+                loading="eager"
+              />
+            </div>
+          </section>
           {/* Case Study Slides - 3 per slide */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-800 mb-8">Product Overview</h2>

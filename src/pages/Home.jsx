@@ -1,15 +1,14 @@
 import Hero from '../components/Hero/Hero'
-import Stats from '../components/Stats/Stats'
 import Services from '../components/Services/Services'
 import Footer from '../components/Footer/Footer'
 import { Check, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import vectorImg from '../assets/img/landing/vector.png'
 
 function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Hero />
-      <Stats />
       
       {/* About Section Preview */}
       <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
@@ -68,16 +67,15 @@ function Home() {
             {/* Right Content */}
             <div className="relative flex justify-center">
               <div className="relative">
-                {/* Main Image */}
-                <div className="w-72 h-80 bg-gradient-to-br from-primary-500 to-secondary-300 rounded-3xl shadow-2xl"></div>
+                {/* Main Image replaced with vector.png */}
+                <img
+                  src={vectorImg}
+                  alt="Experience Vector"
+                  className="w-[420px] h-[420px] md:w-[500px] md:h-[500px] object-contain"
+                  loading="eager"
+                />
                 
-                {/* Experience Badge */}
-                <div className="absolute -bottom-6 -left-8 bg-white rounded-2xl p-6 shadow-xl border border-gray-100">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-secondary-500">20+</div>
-                    <div className="text-sm text-gray-600 font-medium">Year Of<br />Experience</div>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>

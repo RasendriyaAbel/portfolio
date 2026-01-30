@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { Palette, Monitor, ClipboardList, ExternalLink, Calendar } from 'lucide-react'
 import kaiCoverImage from '../../assets/img/kai_redesign/sampul_redesign_kai.png'
 import trelloCoverImage from '../../assets/img/manpro_trello/sampul_trello.png'
+import fixyouCoverImage from '../../assets/img/fixyou/cover_fixyou.png'
+import bmuCoverImage from '../../assets/img/bmu/image.png'
 
 function Projects() {
   const [activeCategory, setActiveCategory] = useState('all')
@@ -24,7 +26,8 @@ function Projects() {
       technologies: ['Laravel 12', 'React 19', 'Inertia.js', 'Tailwind CSS', 'Python Flask', 'Google Gemini API', 'MySQL', 'WebSocket'],
       link: 'https://github.com',
       image: 'bg-gradient-to-br from-primary-500 to-secondary-300',
-      achievement: 'Top 5 Finalist Intelecta Cup'
+       coverImage: fixyouCoverImage,
+       achievement: 'Top 5 Finalist Intelecta Cup'
     },
     {
       id: 2,
@@ -89,17 +92,18 @@ function Projects() {
       image: 'bg-gradient-to-br from-primary-500 to-secondary-300'
     },
     {
-      id: 8,
-      title: 'Production Control System',
-      category: 'management',
-      period: 'Jul 2025 - Aug 2025',
-      description: 'Web-based Planning Control System yang mengotomasi daily manufacturing production scheduling berdasarkan input parameters seperti production time, stock levels, customer demand, dan working hours.',
-      technologies: ['Web Development', 'Planning System', 'Automation'],
-      link: '#',
-      image: 'bg-gradient-to-br from-primary-500 to-secondary-300',
-      coverImage: trelloCoverImage,
-      company: 'PT Berlindo Mitra Utama'
-    },
+        id: 8,
+        title: 'Production Control System',
+        category: 'management',
+        categories: ['management', 'development'],
+        period: 'Jul 2025 - Aug 2025',
+        description: 'Web-based Planning Control System yang mengotomasi daily manufacturing production scheduling berdasarkan input parameters seperti production time, stock levels, customer demand, dan working hours.',
+        technologies: ['Web Development', 'Planning System', 'Automation'],
+        link: '#',
+        image: 'bg-gradient-to-br from-primary-500 to-secondary-300',
+        coverImage: bmuCoverImage,
+        company: 'PT Berlindo Mitra Utama'
+      },
     {
       id: 9,
       title: 'RollerCoaster 2024 Event',
@@ -125,13 +129,17 @@ function Projects() {
     }
   ]
 
-  const filteredProjects = activeCategory === 'all' 
-    ? allProjects 
-    : allProjects.filter(project => project.category === activeCategory)
+  const filteredProjects = activeCategory === 'all'
+    ? allProjects
+    : allProjects.filter(project => Array.isArray(project.categories)
+      ? project.categories.includes(activeCategory)
+      : project.category === activeCategory)
 
   const getCategoryCount = (categoryId) => {
     if (categoryId === 'all') return allProjects.length
-    return allProjects.filter(p => p.category === categoryId).length
+    return allProjects.filter(p => Array.isArray(p.categories)
+      ? p.categories.includes(categoryId)
+      : p.category === categoryId).length
   }
 
   return (
@@ -255,9 +263,25 @@ function Projects() {
                   </div>
 
                   {/* View Project Link */}
-                  {project.id === 2 ? (
+                  {project.id === 1 ? (
                     <Link
-                      to="/projects/kai-redesign"
+                      to="/projects/fixyou"
+                      className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm group/link"
+                    >
+                      <span>View Project</span>
+                      <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                    </Link>
+                  ) : project.id === 8 ? (
+                    <Link
+                      to="/projects/production-control-system"
+                      className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm group/link"
+                    >
+                      <span>View Project</span>
+                      <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                    </Link>
+                  ) : (project.id === 2 || project.id === 10) ? (
+                    <Link
+                      to={project.id === 2 ? "/projects/kai-redesign" : "/projects/trello-management"}
                       className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm group/link"
                     >
                       <span>View Case Study</span>
