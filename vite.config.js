@@ -3,7 +3,9 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './', // gunakan path relatif agar aman untuk GitHub Pages
+  // Gunakan base absolut ke repo untuk GitHub Pages Project Pages
+  // Contoh: https://username.github.io/portfolio/ -> base harus '/portfolio/'
+  base: '/portfolio/',
   plugins: [react()],
   assetsInclude: ['**/*.docx', '**/*.pdf'],
   css: {
