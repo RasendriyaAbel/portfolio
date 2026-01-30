@@ -13,7 +13,7 @@ import ProjectDetailTAK from './pages/ProjectDetailTAK'
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio">
       <div className="min-h-screen bg-white">
         <Header />
         <Routes>
