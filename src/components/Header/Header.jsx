@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Download, Menu, X } from 'lucide-react'
 import logoImg from '../../assets/img/header/logo.png'
+import cvPdf from '../../assets/img/landing/CV_ATS_RasendriyaAbel_New.pdf'
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -39,10 +40,10 @@ function Header() {
             </Link>
 
             {/* Download CV Button - Desktop */}
-            <button className="btn-primary ml-2">
+            <a href={cvPdf} download className="btn-primary ml-2">
               <Download className="w-4 h-4" />
               <span>Download CV</span>
-            </button>
+            </a>
           </div>
 
           {/* Hamburger - Mobile */}
@@ -77,14 +78,13 @@ function Header() {
         <div className="p-6 space-y-4">
           <Link to="/" className="block text-gray-800 font-semibold hover:text-primary-600" onClick={() => setIsOpen(false)}>Home</Link>
           <Link to="/about" className="block text-gray-800 font-semibold hover:text-primary-600" onClick={() => setIsOpen(false)}>About</Link>
-          <Link to="/#services" className="block text-gray-800 font-semibold hover:text-primary-600" onClick={() => setIsOpen(false)}>Services</Link>
           <Link to="/projects" className="block text-gray-800 font-semibold hover:text-primary-600" onClick={() => setIsOpen(false)}>Projects</Link>
           <Link to="/#contact" className="block text-gray-800 font-semibold hover:text-primary-600" onClick={() => setIsOpen(false)}>Contact</Link>
           <div className="pt-4">
-            <button className="btn-primary w-full" onClick={() => setIsOpen(false)}>
+            <a href={cvPdf} download className="btn-primary w-full" onClick={() => setIsOpen(false)}>
               <Download className="w-4 h-4" />
               <span>Download CV</span>
-            </button>
+            </a>
           </div>
         </div>
       </nav>

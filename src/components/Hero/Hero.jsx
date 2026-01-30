@@ -21,10 +21,10 @@ function Hero() {
                 Passionate in Software Development, UI/UX Design, and Project Management
               </p>
             </div>
-            <button className="btn-secondary">
+            <a href="https://www.instagram.com/rasendriyaabel_/" target="_blank" rel="noopener noreferrer" className="btn-secondary">
               <MessageCircle className="w-4 h-4" />
-              <span>Contact Us</span>
-            </button>
+              <span>Contact Me</span>
+            </a>
           </div>
 
           {/* Right Content removed: using background image for hero */}

@@ -2,10 +2,19 @@ import Hero from '../components/Hero/Hero'
 import Services from '../components/Services/Services'
 import Footer from '../components/Footer/Footer'
 import { Check, ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import vectorImg from '../assets/img/landing/vector.png'
+import { useEffect } from 'react'
 
 function Home() {
+  const location = useLocation()
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '')
+      const el = document.getElementById(id)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [location])
   return (
     <div className="min-h-screen bg-white">
       <Hero />
@@ -93,12 +102,17 @@ function Home() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary">
+            <a
+              href="https://www.instagram.com/rasendriyaabel_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
               Get Started
-            </button>
-            <button className="btn-outline">
+            </a>
+            <Link to="/projects" className="btn-outline">
               View Portfolio
-            </button>
+            </Link>
           </div>
         </div>
       </section>
