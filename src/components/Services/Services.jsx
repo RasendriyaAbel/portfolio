@@ -3,7 +3,7 @@ import { Palette, ClipboardList, Monitor } from 'lucide-react'
 function Services() {
   return (
     <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">My Services</h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">

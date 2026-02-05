@@ -20,8 +20,8 @@ function Home() {
       <Hero />
       
       {/* About Section Preview */}
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
+      <section id="about" className="py-10 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <div className="space-y-6">
@@ -80,7 +80,7 @@ function Home() {
                 <img
                   src={vectorImg}
                   alt="Experience Vector"
-                  className="w-[620px] h-[620px] md:w-[600px] md:h-[600px] object-contain"
+                  className="w-[520px] h-[520px] md:w-[500px] md:h-[500px] object-contain"
                   loading="eager"
                 />
                 
@@ -94,7 +94,7 @@ function Home() {
       <Services />
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section id="contact" className="py-10 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">Let's Work Together</h2>
           <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">

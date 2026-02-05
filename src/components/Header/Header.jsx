@@ -10,14 +10,14 @@ function Header() {
   return (
     <header className="fixed w-full top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="grid grid-cols-3 items-center py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img src={logoImg} alt="Logo" className="w-20 h-20 sm:w-16 sm:h-16 rounded-lg" />
+          <Link to="/" className="flex items-center justify-self-start">
+            <img src={logoImg} alt="Logo" className="w-16 h-16 sm:w-22 sm:h-12 rounded-lg" />
           </Link>
 
-          {/* Navigation Links - Desktop */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Navigation Links - Desktop (center) */}
+          <div className="hidden md:flex items-center justify-center space-x-8">
             <Link to="/" className="text-gray-700 hover:text-primary-500 font-medium transition-colors duration-200 relative group">
               Home
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-200 group-hover:w-full"></span>
@@ -38,8 +38,10 @@ function Header() {
               Contact
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-200 group-hover:w-full"></span>
             </Link>
+          </div>
 
-            {/* Download CV Button - Desktop */}
+          {/* Right actions - Desktop */}
+          <div className="hidden md:flex justify-self-end">
             <a href={cvPdf} download className="btn-primary ml-2">
               <Download className="w-4 h-4" />
               <span>Download CV</span>
@@ -50,7 +52,7 @@ function Header() {
           <button
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen}
-            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-100"
+            className="md:hidden justify-self-end inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-100"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

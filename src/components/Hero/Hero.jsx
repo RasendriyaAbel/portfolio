@@ -3,8 +3,8 @@ import heroBg from '../../assets/img/landing/backgroundhero.png'
 
 function Hero() {
   return (
-    <section id="home" className="pt-24 pb-12 relative bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="home" className="pt-10 pb-10 relative bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }}>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-1 gap-12 items-center min-h-[70vh] sm:min-h-[80vh]">
           {/* Left Content */}
           <div className="space-y-8">
