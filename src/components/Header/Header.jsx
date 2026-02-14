@@ -8,41 +8,37 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+    <header className="fixed inset-x-0 top-6 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-3 items-center py-4">
+        <div className="relative bg-white/90 backdrop-blur border-2 border-gray-200 shadow px-4 sm:px-6 grid grid-cols-3 items-center py-4">
+          <div className="absolute left-0 top-0 bottom-0 w-2 bg-primary-500" aria-hidden="true" />
           {/* Logo */}
           <Link to="/" className="flex items-center justify-self-start">
-            <img src={logoImg} alt="Logo" className="w-16 h-16 sm:w-22 sm:h-12 rounded-lg" />
+            <img src={logoImg} alt="Logo" className="w-26 h-16" />
           </Link>
 
           {/* Navigation Links - Desktop (center) */}
-          <div className="hidden md:flex items-center justify-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-primary-500 font-medium transition-colors duration-200 relative group">
+          <div className="hidden md:flex items-center justify-center gap-8">
+            <Link to="/" className="text-gray-900 uppercase font-black tracking-widest">
               Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-200 group-hover:w-full"></span>
             </Link>
-            <Link to="/about" className="text-gray-700 hover:text-primary-500 font-medium transition-colors duration-200 relative group">
+            <Link to="/about" className="text-gray-900 uppercase font-black tracking-widest">
               About
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-200 group-hover:w-full"></span>
             </Link>
-            <Link to="/#services" className="text-gray-700 hover:text-primary-500 font-medium transition-colors duration-200 relative group">
+            <Link to="/#services" className="text-gray-900 uppercase font-black tracking-widest">
               Services
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-200 group-hover:w-full"></span>
             </Link>
-            <Link to="/projects" className="text-gray-700 hover:text-primary-500 font-medium transition-colors duration-200 relative group">
+            <Link to="/projects" className="text-gray-900 uppercase font-black tracking-widest">
               Projects
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-200 group-hover:w-full"></span>
             </Link>
-            <Link to="/#contact" className="text-gray-700 hover:text-primary-500 font-medium transition-colors duration-200 relative group">
+            <Link to="/#contact" className="text-gray-900 uppercase font-black tracking-widest">
               Contact
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-200 group-hover:w-full"></span>
             </Link>
           </div>
 
           {/* Right actions - Desktop */}
           <div className="hidden md:flex justify-self-end">
-            <a href={cvPdf} download className="btn-primary ml-2">
+            <a href={cvPdf} download className="btn-primary ml-2 rounded-none">
               <Download className="w-4 h-4" />
               <span>Download CV</span>
             </a>
@@ -52,7 +48,7 @@ function Header() {
           <button
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen}
-            className="md:hidden justify-self-end inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-100"
+            className="md:hidden justify-self-end inline-flex items-center justify-center w-10 h-10 border-2 border-gray-200 text-gray-900"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -65,25 +61,25 @@ function Header() {
         className={`md:hidden fixed inset-0 z-40 bg-white transition-transform duration-300 ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}
         aria-hidden={!isOpen}
       >
-        <div className="px-6 py-4 flex items-center justify-between border-b border-gray-100">
+        <div className="px-6 py-4 flex items-center justify-between border-b-2 border-gray-200">
           <Link to="/" className="flex items-center" onClick={() => setIsOpen(false)}>
-            <img src={logoImg} alt="Logo" className="w-12 h-12 rounded-lg" />
+            <img src={logoImg} alt="Logo" className="w-12 h-12" />
           </Link>
           <button
             aria-label="Close menu"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200"
+            className="inline-flex items-center justify-center w-10 h-10 border-2 border-gray-200"
             onClick={() => setIsOpen(false)}
           >
             <X className="w-6 h-6" />
           </button>
         </div>
         <div className="p-6 space-y-4">
-          <Link to="/" className="block text-gray-800 font-semibold hover:text-primary-600" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link to="/about" className="block text-gray-800 font-semibold hover:text-primary-600" onClick={() => setIsOpen(false)}>About</Link>
-          <Link to="/projects" className="block text-gray-800 font-semibold hover:text-primary-600" onClick={() => setIsOpen(false)}>Projects</Link>
-          <Link to="/#contact" className="block text-gray-800 font-semibold hover:text-primary-600" onClick={() => setIsOpen(false)}>Contact</Link>
+          <Link to="/" className="block text-gray-900 font-black uppercase tracking-widest" onClick={() => setIsOpen(false)}>Home</Link>
+          <Link to="/about" className="block text-gray-900 font-black uppercase tracking-widest" onClick={() => setIsOpen(false)}>About</Link>
+          <Link to="/projects" className="block text-gray-900 font-black uppercase tracking-widest" onClick={() => setIsOpen(false)}>Projects</Link>
+          <Link to="/#contact" className="block text-gray-900 font-black uppercase tracking-widest" onClick={() => setIsOpen(false)}>Contact</Link>
           <div className="pt-4">
-            <a href={cvPdf} download className="btn-primary w-full" onClick={() => setIsOpen(false)}>
+            <a href={cvPdf} download className="btn-primary w-full rounded-none" onClick={() => setIsOpen(false)}>
               <Download className="w-4 h-4" />
               <span>Download CV</span>
             </a>

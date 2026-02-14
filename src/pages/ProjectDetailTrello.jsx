@@ -35,7 +35,6 @@ import mt20 from '../assets/img/manpro_trello/20.png'
 
 function ProjectDetailTrello() {
   const overviewSlides = [mt1, mt2, mt3, mt4, mt5, mt6, mt7, mt8, mt9, mt10, mt11, mt12, mt13, mt14, mt15, mt16, mt17, mt18, mt19, mt20]
-  const documentationSlides = [trelloInfographic, mt1, mt2, mt3, mt4, mt5, mt6, mt7, mt8, mt9, mt10, mt11, mt12, mt13, mt14, mt15, mt16, mt17, mt18, mt19, mt20]
 
   return (
     <div className="min-h-screen bg-white">
