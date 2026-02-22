@@ -18,7 +18,7 @@ function ProjectDetailHarvestHub() {
   const overviewSlides = [hh1, hh2, hh3, hh4, hh5, hh6]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white swiss-grid-bg">
       <ProjectHero
         title="HarvestHub"
         subtitle="Platform untuk meningkatkan efektivitas distribusi hasil pertanian"

@@ -47,7 +47,9 @@ function ProjectDetailMusikan() {
       {/* Overview Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Ringkasan Proyek</h2>
+          <div className="border-l-8 border-primary-500 pl-4 mb-6">
+            <h2 className="text-3xl font-black text-gray-900 uppercase tracking-widest">Ringkasan Proyek</h2>
+          </div>
           <p className="text-gray-600 max-w-3xl">
             Studi dan eksplorasi pengalaman pengguna untuk aplikasi pemutar musik: melakukan user research, menyusun persona, 
             user flow, wireframe, dan prototyping. Fokus pada kemudahan navigasi, pencarian, dan kontrol playback.
@@ -55,7 +57,9 @@ function ProjectDetailMusikan() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8">Project Overview</h2>
+          <div className="border-l-8 border-primary-500 pl-4 mb-8">
+            <h2 className="text-3xl font-black text-gray-900 uppercase tracking-widest">Project Overview</h2>
+          </div>
 
           <Swiper
             modules={[Navigation, Pagination]}
@@ -68,7 +72,7 @@ function ProjectDetailMusikan() {
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 }
             }}
-            className="rounded-xl"
+            className=""
           >
             {overviewImages.map((imgSrc, idx) => (
               <SwiperSlide key={idx}>
@@ -83,11 +87,11 @@ function ProjectDetailMusikan() {
         {/* Details */}
         <section className="grid md:grid-cols-2 gap-8">
           <div className="card p-6">
-            <h3 className="text-xl font-bold text-gray-800 mb-3">Tujuan</h3>
+            <h3 className="text-xl font-black uppercase tracking-widest text-gray-900 mb-3">Tujuan</h3>
             <p className="text-gray-600">Merancang pengalaman pemutar musik yang intuitif dengan fokus pada kemudahan pencarian lagu, playlist, dan kontrol playback.</p>
           </div>
           <div className="card p-6">
-            <h3 className="text-xl font-bold text-gray-800 mb-3">Metode</h3>
+            <h3 className="text-xl font-black uppercase tracking-widest text-gray-900 mb-3">Metode</h3>
             <p className="text-gray-600">User research, penyusunan persona, user flow, wireframing, prototyping, dan usability testing.</p>
           </div>
         </section>

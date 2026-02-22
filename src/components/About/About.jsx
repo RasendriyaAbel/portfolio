@@ -62,48 +62,7 @@ function About() {
     }
   ]
 
-  const projects = [
-    {
-      icon: Code,
-      title: "HarvestHub",
-      period: "Dec 2023 - Jan 2024",
-      link: "https://github.com",
-      description: "Platform untuk meningkatkan efektivitas distribusi makanan, pertanian, dan pertanian.",
-      technologies: ["Figma", "React.js", "Java", "Firebase"]
-    },
-    {
-      icon: Code,
-      title: "TAK Mobile Prototype",
-      period: "Feb 2024 - Jun 2024",
-      link: "https://github.com",
-      description: "Mobile app prototype untuk Student Activity Transcript (TAK) Telkom University untuk meningkatkan aksesibilitas.",
-      technologies: ["Figma", "CorelDraw X7"]
-    },
-    {
-      icon: Code,
-      title: "Musikan Music Player Prototype",
-      period: "Jul 2024 - Oct 2024",
-      link: "https://github.com",
-      description: "UI/UX Research dan prototype untuk aplikasi music player dengan user research, personas, user flows, dan usability testing.",
-      technologies: ["Figma", "FigmaJam", "Google Forms", "System Usability Scale (SUS)"]
-    },
-    {
-      icon: Code,
-      title: "SyariPay E-Commerce Prototype",
-      period: "Mar 2025 - Jun 2025",
-      link: "https://github.com",
-      description: "E-commerce platform dengan prinsip syariah untuk resolusi dispute bisnis online.",
-      technologies: ["Figma", "User Flow", "Wireframing"]
-    },
-    {
-      icon: Code,
-      title: "NomoKit Educational Platform Prototype",
-      period: "Feb 2025 - Mar 2025",
-      link: "https://github.com",
-      description: "Website edukasi showcase proyek siswa SMP dengan tema teknologi (games, AI, Machine Learning, Coding).",
-      technologies: ["Figma", "CorelDraw X7"]
-    }
-  ]
+  // Projects section dihapus sesuai permintaan
 
   const experiences = [
     {
@@ -227,30 +186,29 @@ function About() {
   ]
 
   return (
-    <div className="min-h-screen bg-white pt-24">
+    <div className="min-h-screen bg-white pt-24 swiss-grid-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-black text-gray-800 mb-4">
-            About <span className="bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent">Me</span>
-          </h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Undergraduate Informatics Student at Telkom University with expertise in UI/UX Design, 
-            Project Management, and Software Development
-          </p>
+        <div className="mb-16">
+          <div className="border-l-8 border-primary-500 pl-4">
+            <h1 className="text-5xl font-black text-gray-900 uppercase tracking-tight">About Me</h1>
+            <p className="text-gray-700 text-lg mt-3 max-w-2xl">
+              Undergraduate Informatics Student at Telkom University with expertise in UI/UX Design,
+              Project Management, and Software Development.
+            </p>
+          </div>
         </div>
 
         {/* Education Section */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3">
-            <GraduationCap className="text-primary-500 w-8 h-8" />
-            Education
-          </h2>
+          <div className="border-l-8 border-primary-500 pl-4 mb-8">
+            <h2 className="text-3xl font-black text-gray-900 uppercase tracking-widest">Education</h2>
+          </div>
           <div className="space-y-6">
             {education.map((edu, index) => (
-              <div key={index} className="card p-6 hover:shadow-xl transition-shadow">
+              <div key={index} className="bg-white p-6 border-2 border-gray-200">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-300 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-primary-500 flex items-center justify-center flex-shrink-0">
                     <edu.icon className="text-white w-6 h-6" />
                   </div>
                   <div className="flex-1">
@@ -276,15 +234,14 @@ function About() {
 
         {/* Achievements Section */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3">
-            <Award className="text-primary-500 w-8 h-8" />
-            Achievements
-          </h2>
+          <div className="border-l-8 border-primary-500 pl-4 mb-8">
+            <h2 className="text-3xl font-black text-gray-900 uppercase tracking-widest">Achievements</h2>
+          </div>
           <div className="space-y-8">
             {achievements.map((achievement, index) => (
-              <div key={index} className="card p-6 hover:shadow-xl transition-shadow">
+              <div key={index} className="bg-white p-6 border-2 border-gray-200">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-300 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-secondary-300 flex items-center justify-center flex-shrink-0">
                     <achievement.icon className="text-white w-6 h-6" />
                   </div>
                   <div className="flex-1">
@@ -330,56 +287,18 @@ function About() {
           </div>
         </section>
 
-        {/* Projects Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3">
-            <Code className="text-primary-500 w-8 h-8" />
-            Projects
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {projects.map((project, index) => (
-              <div key={index} className="card p-6 hover:shadow-xl transition-shadow">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-300 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <project.icon className="text-white w-6 h-6" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-800 mb-1">{project.title}</h3>
-                    <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
-                      <Calendar className="w-4 h-4" />
-                      <span>{project.period}</span>
-                    </div>
-                    <p className="text-gray-700 mb-3">{project.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span key={techIndex} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" 
-                       className="text-primary-600 hover:text-primary-700 font-semibold text-sm flex items-center gap-1">
-                      <ExternalLink className="w-4 h-4" />
-                      View Project
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        {/* Projects Section dihapus */}
 
         {/* Experience Section */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3">
-            <Briefcase className="text-primary-500 w-8 h-8" />
-            Experience
-          </h2>
+          <div className="border-l-8 border-primary-500 pl-4 mb-8">
+            <h2 className="text-3xl font-black text-gray-900 uppercase tracking-widest">Experience</h2>
+          </div>
           <div className="space-y-6">
             {experiences.map((exp, index) => (
-              <div key={index} className="card p-6 hover:shadow-xl transition-shadow">
+              <div key={index} className="bg-white p-6 border-2 border-gray-200">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-300 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-primary-500 flex items-center justify-center flex-shrink-0">
                     <exp.icon className="text-white w-6 h-6" />
                   </div>
                   <div className="flex-1">
@@ -426,15 +345,14 @@ function About() {
 
         {/* Organizations Section */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3">
-            <Users className="text-primary-500 w-8 h-8" />
-            Organizations
-          </h2>
+          <div className="border-l-8 border-primary-500 pl-4 mb-8">
+            <h2 className="text-3xl font-black text-gray-900 uppercase tracking-widest">Organizations</h2>
+          </div>
           <div className="grid md:grid-cols-2 gap-6">
             {organizations.map((org, index) => (
-              <div key={index} className="card p-6 hover:shadow-xl transition-shadow">
+              <div key={index} className="bg-white p-6 border-2 border-gray-200">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-300 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-secondary-300 flex items-center justify-center flex-shrink-0">
                     <org.icon className="text-white w-6 h-6" />
                   </div>
                   <div className="flex-1">
@@ -468,4 +386,3 @@ function About() {
 }
 
 export default About
-

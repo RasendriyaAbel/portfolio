@@ -2,7 +2,14 @@ import { MessageCircle } from 'lucide-react'
 
 function Hero() {
   return (
-    <section id="home" className="relative pt-28 pb-24 swiss-grid-bg">
+    <section id="home" className="relative pt-40 pb-24 swiss-grid-bg">
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute -top-16 -right-10 w-72 h-72 bg-gradient-to-br from-secondary-200 to-secondary-400 rounded-full blur-3xl opacity-40" />
+        <div className="absolute top-24 right-24 w-24 h-24 border-4 border-secondary-300 rotate-45 opacity-60" />
+        <div className="absolute bottom-10 left-10 w-48 h-48 bg-secondary-100 rounded-full blur-2xl opacity-70" />
+        <div className="absolute bottom-24 right-1/3 w-16 h-16 bg-secondary-300 opacity-70" />
+        <div className="absolute top-10 left-1/4 w-12 h-12 bg-secondary-400 rounded-sm opacity-60" />
+      </div>
       <div className="absolute left-0 top-0 bottom-0 w-2 bg-primary-500" aria-hidden="true" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -55,4 +62,3 @@ function Hero() {
 }
 
 export default Hero
-

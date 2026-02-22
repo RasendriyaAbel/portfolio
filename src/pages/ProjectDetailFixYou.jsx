@@ -55,7 +55,7 @@ function ProjectDetailFixYou() {
       
    
   return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white swiss-grid-bg">
         <ProjectHero
           title="FixYou - Mental Health Platform"
           subtitle="Platform kesehatan mental dengan integrasi AI/ML untuk analisis mood"
@@ -107,7 +107,9 @@ function ProjectDetailFixYou() {
   
           {/* Technologies Used */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-800 mb-8">Technologies Used</h2>
+            <div className="border-l-8 border-primary-500 pl-4 mb-8">
+              <h2 className="text-3xl font-black text-gray-900 uppercase tracking-widest">Technologies Used</h2>
+            </div>
             <div className="flex flex-wrap gap-3">
               {[
                 'React.js',
@@ -125,10 +127,7 @@ function ProjectDetailFixYou() {
                 'MySQL',
                 'WebSocket',
               ].map((tech, index) => (
-                <span
-                  key={index}
-                  className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
-                >
+                <span key={index} className="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-black uppercase tracking-widest border-2">
                   {tech}
                 </span>
               ))}

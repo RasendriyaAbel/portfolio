@@ -37,7 +37,7 @@ function ProjectDetailTrello() {
   const overviewSlides = [mt1, mt2, mt3, mt4, mt5, mt6, mt7, mt8, mt9, mt10, mt11, mt12, mt13, mt14, mt15, mt16, mt17, mt18, mt19, mt20]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white swiss-grid-bg">
       <ProjectHero
         title="Implementasi Manajemen Proyek menggunakan Trello"
         subtitle="Agile & Kanban untuk manajemen dan monitoring proyek"
@@ -52,7 +52,9 @@ function ProjectDetailTrello() {
 
         {/* Technologies Used */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8">Technologies & Methods</h2>
+          <div className="border-l-8 border-primary-500 pl-4 mb-8">
+            <h2 className="text-3xl font-black text-gray-900 uppercase tracking-widest">Technologies & Methods</h2>
+          </div>
           <div className="flex flex-wrap gap-3">
             {[
               'Trello',
@@ -64,10 +66,7 @@ function ProjectDetailTrello() {
               'Project Charter',
               'Progress Tracking',
             ].map((tech, index) => (
-              <span
-                key={index}
-                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
-              >
+              <span key={index} className="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-black uppercase tracking-widest border-2">
                 {tech}
               </span>
             ))}
@@ -76,7 +75,9 @@ function ProjectDetailTrello() {
 
         {/* Documents Preview */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8">Project Overview</h2>
+          <div className="border-l-8 border-primary-500 pl-4 mb-8">
+            <h2 className="text-3xl font-black text-gray-900 uppercase tracking-widest">Project Overview</h2>
+          </div>
           <Swiper
             modules={[Navigation, Pagination]}
             spaceBetween={30}
@@ -96,7 +97,7 @@ function ProjectDetailTrello() {
                   <img
                     src={imgSrc}
                     alt={`Overview ${idx + 1}`}
-                    className="w-full h-auto object-cover rounded-2xl"
+                    className="w-full h-auto object-cover"
                     loading="lazy"
                   />
                 </div>
@@ -112,7 +113,7 @@ function ProjectDetailTrello() {
             {/* Gantt Chart (PDF) */}
             <div className="card p-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-gray-800">Gantt Chart (PDF)</h3>
+                <h3 className="text-xl font-black uppercase tracking-widest text-gray-900">Gantt Chart (PDF)</h3>
                 <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">Preview</span>
               </div>
               <div className="rounded-2xl overflow-hidden border border-gray-200">
@@ -135,7 +136,7 @@ function ProjectDetailTrello() {
             {/* Project Charter (PDF) */}
             <div className="card p-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-gray-800">Project Charter (PDF)</h3>
+                <h3 className="text-xl font-black uppercase tracking-widest text-gray-900">Project Charter (PDF)</h3>
                 <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">Preview</span>
               </div>
               <div className="rounded-2xl overflow-hidden border border-gray-200">
@@ -158,7 +159,7 @@ function ProjectDetailTrello() {
             {/* PMP Document Kelompok 7 (PDF) */}
             <div className="card p-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-gray-800">PMP Document Kelompok 7 (PDF)</h3>
+                <h3 className="text-xl font-black uppercase tracking-widest text-gray-900">PMP Document Kelompok 7 (PDF)</h3>
                 <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">Preview</span>
               </div>
               <div className="rounded-2xl overflow-hidden border border-gray-200">
@@ -181,7 +182,7 @@ function ProjectDetailTrello() {
             {/* Infografis Manpro (PNG) */}
             <div className="card p-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-gray-800">Infografis Manpro (PNG)</h3>
+                <h3 className="text-xl font-black uppercase tracking-widest text-gray-900">Infografis Manpro (PNG)</h3>
                 <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">Preview</span>
               </div>
               <div className="rounded-2xl overflow-hidden border border-gray-200">
@@ -212,7 +213,7 @@ function ProjectDetailTrello() {
                 <img
                   src={trelloCover}
                   alt="Sampul Trello Preview"
-                  className="w-full h-auto object-cover rounded-2xl"
+                  className="w-full h-auto object-cover"
                   loading="lazy"
                 />
               </div>

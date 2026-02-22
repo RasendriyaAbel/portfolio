@@ -48,7 +48,7 @@ function Header() {
           <button
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen}
-            className="md:hidden justify-self-end inline-flex items-center justify-center w-10 h-10 border-2 border-gray-200 text-gray-900"
+            className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 inline-flex items-center justify-center w-10 h-10 border-2 border-gray-200 text-gray-900"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

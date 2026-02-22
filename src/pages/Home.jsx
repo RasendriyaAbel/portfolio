@@ -3,8 +3,8 @@ import Services from '../components/Services/Services'
 import Footer from '../components/Footer/Footer'
 import { Check, ArrowRight } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
-import vectorImg from '../assets/img/landing/vector.png'
 import { useEffect } from 'react'
+import ilustrasiImg from '../assets/img/landing/ilustrasi.png'
 
 function Home() {
   const location = useLocation()
@@ -77,10 +77,9 @@ function Home() {
             {/* Right Content */}
             <div className="relative flex justify-center">
               <div className="relative border-4 border-gray-300 p-2">
-                {/* Main Image replaced with vector.png */}
                 <img
-                  src={vectorImg}
-                  alt="Experience Vector"
+                  src={ilustrasiImg}
+                  alt="Ilustrasi"
                   className="w-[520px] h-[520px] md:w-[500px] md:h-[500px] object-contain"
                   loading="eager"
                 />

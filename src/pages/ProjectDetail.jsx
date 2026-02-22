@@ -28,7 +28,7 @@ function ProjectDetail() {
   ]  
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white swiss-grid-bg">
       <ProjectHero
         title="KAI Redesign Apps"
         subtitle="UX Case Study: akses informasi harga tiket lebih mudah"
@@ -42,7 +42,9 @@ function ProjectDetail() {
 
         {/* Case Study Slides - 3 per slide */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8">Case Study Overview</h2>
+          <div className="border-l-8 border-primary-500 pl-4 mb-8">
+            <h2 className="text-3xl font-black text-gray-900 uppercase tracking-widest">Case Study Overview</h2>
+          </div>
           <Swiper
             modules={[Navigation, Pagination]}
             spaceBetween={30}
@@ -69,7 +71,7 @@ function ProjectDetail() {
                   <img 
                     src={slide.image} 
                     alt={`Case Study Image ${slide.id}`}
-                    className="w-full h-auto object-cover rounded-2xl"
+                    className="w-full h-auto object-cover"
                     loading="lazy"
                   />
                 </div>
@@ -81,7 +83,9 @@ function ProjectDetail() {
 
         {/* Technologies Used */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8">Technologies Used</h2>
+          <div className="border-l-8 border-primary-500 pl-4 mb-8">
+            <h2 className="text-3xl font-black text-gray-900 uppercase tracking-widest">Technologies Used</h2>
+          </div>
           <div className="flex flex-wrap gap-3">
             {[
               'Figma',
@@ -89,7 +93,7 @@ function ProjectDetail() {
             ].map((tech, index) => (
               <span
                 key={index}
-                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
+                className="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-black uppercase tracking-widest border-2"
               >
                 {tech}
               </span>

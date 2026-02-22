@@ -21,7 +21,7 @@ function ProjectDetailTAK() {
     .map(([, src]) => src)
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white swiss-grid-bg">
       <ProjectHero
         title="TAK Mobile Prototype"
         subtitle="Prototype aplikasi Student Activity Transcript (TAK) Telkom University"
@@ -33,7 +33,9 @@ function ProjectDetailTAK() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8">Project Overview</h2>
+          <div className="border-l-8 border-primary-500 pl-4 mb-8">
+            <h2 className="text-3xl font-black text-gray-900 uppercase tracking-widest">Project Overview</h2>
+          </div>
           <Swiper
             modules={[Navigation, Pagination]}
             spaceBetween={30}
@@ -53,7 +55,7 @@ function ProjectDetailTAK() {
                   <img
                     src={imgSrc}
                     alt={`Overview ${idx + 1}`}
-                    className="w-full h-auto object-cover rounded-2xl"
+                    className="w-full h-auto object-cover"
                     loading="lazy"
                   />
                 </div>

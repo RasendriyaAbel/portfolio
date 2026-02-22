@@ -149,20 +149,20 @@ function Projects() {
   }
 
   return (
-    <div className="min-h-screen bg-white pt-24">
+    <div className="min-h-screen bg-white pt-24 swiss-grid-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-black text-gray-800 mb-4">
-            My <span className="bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent">Projects</span>
-          </h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Explore my work across UI/UX Design, Software Development, and Project Management
-          </p>
+        <div className="mb-12">
+          <div className="border-l-8 border-primary-500 pl-4">
+            <h1 className="text-5xl font-black text-gray-900 uppercase tracking-tight">Projects</h1>
+            <p className="text-gray-700 text-lg max-w-2xl">
+              Explore work across UI/UX, Development, and Management.
+            </p>
+          </div>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap md:flex-nowrap items-center justify-start gap-2 sm:gap-3 md:gap-4 mb-12">
           {categories.map((category) => {
             const Icon = category.icon
             const count = getCategoryCount(category.id)
@@ -170,21 +170,11 @@ function Projects() {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                  activeCategory === category.id
-                    ? 'bg-gradient-to-r from-primary-500 to-secondary-300 text-white shadow-lg transform scale-105'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+                className={`btn-category-swiss whitespace-nowrap min-w-[48%] sm:min-w-0 flex-shrink-0 px-4 py-2 text-xs sm:text-sm md:px-6 md:py-3 md:text-base`}
               >
                 <Icon className="w-5 h-5" />
                 <span>{category.name}</span>
-                <span className={`px-2 py-0.5 rounded-full text-xs ${
-                  activeCategory === category.id
-                    ? 'bg-white/20 text-white'
-                    : 'bg-gray-200 text-gray-600'
-                }`}>
-                  {count}
-                </span>
+                <span className="px-2 py-0.5 border-2 text-xs bg-white text-gray-900">{count}</span>
               </button>
             )
           })}
@@ -194,12 +184,9 @@ function Projects() {
         {filteredProjects.length > 0 ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="card p-6 hover:shadow-xl transition-all duration-300 group"
-              >
+              <div key={project.id} className="card p-6 group">
                 {/* Project Image/Icon */}
-                <div className={`w-full h-48 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden ${!project.coverImage ? project.image : ''}`}>
+                <div className={`w-full h-48 mb-4 flex items-center justify-center relative overflow-hidden`}>
                   {project.coverImage ? (
                     <img 
                       src={project.coverImage} 
@@ -208,7 +195,7 @@ function Projects() {
                     />
                   ) : (
                     <>
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary-400/20 to-secondary-300/20"></div>
+                      <div className="absolute inset-0 bg-gray-100"></div>
                       {project.category === 'uiux' && (
                         <Palette className="text-white w-16 h-16 opacity-50" />
                       )}
@@ -221,7 +208,7 @@ function Projects() {
                     </>
                   )}
                   {project.achievement && (
-                    <div className="absolute top-2 right-2 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary-600">
+                    <div className="absolute top-2 right-2 bg-white px-3 py-1 border-2 text-xs font-black text-primary-600">
                       {project.achievement}
                     </div>
                   )}
@@ -231,7 +218,7 @@ function Projects() {
                 <div className="space-y-3">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-gray-800 mb-1 group-hover:text-primary-600 transition-colors">
+                      <h3 className="text-xl font-black uppercase tracking-widest text-gray-900 mb-1">
                         {project.title}
                       </h3>
                       <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
@@ -247,22 +234,19 @@ function Projects() {
                     </div>
                   </div>
 
-                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                  <p className="text-gray-700 text-sm leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
 
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.slice(0, 3).map((tech, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium"
-                      >
+                      <span key={index} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-black uppercase tracking-widest border-2">
                         {tech}
                       </span>
                     ))}
                     {project.technologies.length > 3 && (
-                      <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">
+                      <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-black uppercase tracking-widest border-2">
                         +{project.technologies.length - 3} more
                       </span>
                     )}
@@ -272,7 +256,7 @@ function Projects() {
                   {project.id === 1 ? (
                     <Link
                       to="/projects/fixyou"
-                      className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm group/link"
+                      className="inline-flex items-center gap-2 text-primary-600 font-black uppercase tracking-widest text-sm group/link"
                     >
                       <span>View Project</span>
                       <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
@@ -280,7 +264,7 @@ function Projects() {
                   ) : project.id === 3 ? (
                     <Link
                       to="/projects/harvesthub"
-                      className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm group/link"
+                      className="inline-flex items-center gap-2 text-primary-600 font-black uppercase tracking-widest text-sm group/link"
                     >
                       <span>View Project</span>
                       <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
@@ -288,7 +272,7 @@ function Projects() {
                   ) : project.id === 4 ? (
                     <Link
                       to="/projects/tak-mobile-prototype"
-                      className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm group/link"
+                      className="inline-flex items-center gap-2 text-primary-600 font-black uppercase tracking-widest text-sm group/link"
                     >
                       <span>View Project</span>
                       <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
@@ -296,7 +280,7 @@ function Projects() {
                   ) : project.id === 5 ? (
                     <Link
                       to="/projects/musikan"
-                      className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm group/link"
+                      className="inline-flex items-center gap-2 text-primary-600 font-black uppercase tracking-widest text-sm group/link"
                     >
                       <span>View Project</span>
                       <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
@@ -304,7 +288,7 @@ function Projects() {
                   ) : project.id === 8 ? (
                     <Link
                       to="/projects/production-control-system"
-                      className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm group/link"
+                      className="inline-flex items-center gap-2 text-primary-600 font-black uppercase tracking-widest text-sm group/link"
                     >
                       <span>View Project</span>
                       <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
@@ -312,7 +296,7 @@ function Projects() {
                   ) : (project.id === 2 || project.id === 10) ? (
                     <Link
                       to={project.id === 2 ? "/projects/kai-redesign" : "/projects/trello-management"}
-                      className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm group/link"
+                      className="inline-flex items-center gap-2 text-primary-600 font-black uppercase tracking-widest text-sm group/link"
                     >
                       <span>View Case Study</span>
                       <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
@@ -322,7 +306,7 @@ function Projects() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm group/link"
+                      className="inline-flex items-center gap-2 text-primary-600 font-black uppercase tracking-widest text-sm group/link"
                     >
                       <span>View Project</span>
                       <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
@@ -344,4 +328,3 @@ function Projects() {
 }
 
 export default Projects
-
